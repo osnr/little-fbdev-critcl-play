@@ -1,6 +1,6 @@
 # little-fbdev-critcl-play
 
-fbdev slide
+<a href="https://twitter.com/rsnous/status/1506225456709873666"><img src="doc/graphics-in-1-slide.png" width="400"></a>
 
 ## Usage
 
@@ -23,13 +23,13 @@ $ sudo apt install tcl critcl
 $ tclsh little-fbdev-critcl-play.tcl
 ```
 
-The screen should turn green.
+The screen should turn green!
 
 ## Backstory-ish
 
-DISCORD MESSAGE
+<img src="doc/backstory.png" width="550">
 
-so I wanted to post the code :-)
+so I wanted to share the code :-)
 
 ## Cool
 
@@ -42,19 +42,25 @@ PostScript-style paths? how should you specify fonts? how do you scale
 and rotate stuff?)
 
 I remember doing things like that in college... rasterization /
-rendering in its purest form, as an algorithmic/optimization problem
+rendering in its [purest
+form](https://twitter.com/rsnous/status/1500608727296225287), as an
+algorithmic/optimization
+[problem](https://twitter.com/rsnous/status/1500610427906150406)
 rather than a 'find the best incantations to talk to the GPU /
 rendering engine / browser' problem.
 
-(even if you ultimately want to use the GPU, you can think of that in
-terms of how it replaces and accelerates parts of this pure software
-stack, which somehow 'tames' it, at least in my head)
+(even if you ultimately want to use the GPU, now you can think of that
+in terms of how it replaces and accelerates parts of this pure
+software stack, which somehow 'tames' it, at least in my head)
 
 ## The alternatives, I guess: Vulkan (or OpenGL?)
 
 (well, I guess that if I want to state alternatives, I should state
-the problem first. I want to put graphics on the screen without
-needing X11 or Wayland installed; I want to talk directly to Linux.)
+the problem first. I want to put
+[graphics](https://twitter.com/rsnous/status/1299457513448828928) [on
+the screen](https://twitter.com/rsnous/status/1259114530908454915)
+without needing X11 or Wayland installed; I want to talk directly to
+Linux.)
 
 Vulkan meme
 
@@ -69,6 +75,8 @@ your CPU computer, and this is the interface to program that computer)
 (I do hear that talking to X is also not that bad if you can call C
 functions, so that may be a conceptual alternative.)
 
+TODO: say something about libdrm??
+
 ## Why Tcl ??
 
 I've been playing with Tcl a lot recently, and this is a tiny spin-off
@@ -76,9 +84,9 @@ of that work. (It's useful to prototype with / lets me dodge the
 enormous upfront psychological drain of spinning up an actual graphics
 stack.)
 
-tcl... now that's what i call a program
+turns out critcl is really nice.
 
-critcl is really nice.
+<img src="doc/tcl.png" width="550">
 
 (I don't get why I need to use the `bytes` type instead of `char*` in
 the `fillRectImpl` function interface. Any ideas? [critcl doc for
@@ -87,14 +95,16 @@ reference](https://andreas-kupries.github.io/critcl/doc/files/critcl_pkg.html#7)
 Compare to the other `little-` projects I have that use
 Lua or LuaJIT instead:
 
-- little-editor
+- [little-editor](https://github.com/osnr/little-editor)
 
-- little-web
+- [little-web-server](https://github.com/osnr/little-web-server)
 
-- TODO other
+- [little-epoll-fiber-scheduler](https://github.com/osnr/little-epoll-fiber-scheduler)
 
-One script you can read & run, that lives in one file, that talks
-directly to the OS and uses the real OS functions (`open`, `connect`,
-`write`, `ioctl`, whatever) that you can read about on `man` pages and
-Stack Overflow and see the stack trace of in `gdb`. no JNI or Python
-FFI or Lua FFI or (God forbid) Node FFI stuff
+they have a common vibe: one script you can read & run, that lives in
+one file, that talks directly to the OS and uses the real OS functions
+(`open`, `connect`, `write`, `ioctl`, whatever) that you can read
+about on `man` pages and Stack Overflow and see the stack trace of in
+`gdb`. no JNI or Python FFI or Lua FFI or (God forbid) Node FFI stuff
+where you have to write some weird C or C++ file and figure out how to
+compile and link it
