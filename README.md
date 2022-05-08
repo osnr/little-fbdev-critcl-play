@@ -29,6 +29,8 @@ The screen should turn green!
 
 <img src="doc/backstory.png" width="550">
 
+([the strange vibe](http://betteros.org/tut/graphics1.php))
+
 so I wanted to share the code :-)
 
 ## Cool
@@ -62,20 +64,30 @@ the screen](https://twitter.com/rsnous/status/1259114530908454915)
 without needing X11 or Wayland installed; I want to talk directly to
 Linux.)
 
-Vulkan meme
+there's Vulkan, which I'm told is the cleanest/most modern way to do headless graphics
+(and multithreaded graphics, if you end up wanting that too):
 
-Vulkan triangle example
+<a href="https://twitter.com/provod_/status/1522479843748679681/photo/1"><img src="doc/vulkan-meme.png" width="500"></a>
 
-Vulkan blog post
+see [triangle.cpp](https://github.com/SaschaWillems/Vulkan/blob/master/examples/triangle/triangle.cpp):
+it's 1236 lines :-)
+
+i really like the look of [this intro blog
+post](https://blog.mecheye.net/2020/06/modern-graphics-apis-1-intro/):
+
+<a
+href="https://blog.mecheye.net/2020/06/modern-graphics-apis-1-intro/"><img
+src="doc/blog-post.png" width="550"></a>
 
 (I mean, it makes sense that it's complicated. your GPU is a whole
 other computer, one which seems much more ad hoc and proprietary than
 your CPU computer, and this is the interface to program that computer)
 
-(I do hear that talking to X is also not that bad if you can call C
-functions, so that may be a conceptual alternative.)
+(I think you can use OpenGL headlessly, too. I do hear that talking to
+X is also not that bad if you can call C functions, so that may be a
+conceptual alternative.)
 
-TODO: say something about libdrm??
+TODO: say something about libdrm?? [this post](https://forums.libretro.com/t/retroarch-raspberry-pi-4-vulkan-without-x-howto/31164)
 
 ## Why Tcl ??
 
